@@ -9,4 +9,12 @@
 - Creating public subnet: 10.0.0.0/25
     * Creating a subnet to start sectioning off the network for security, only certain tools that need access to outside networks or the internet will be placed here
     * Opted for a /25 CIDR, gives us enough room to build and not worry about IP's while also limiting it to a reasonable amount
-
+- Created and attached an IGW to our public subnet
+    * Configured the default route for internet traffic 0.0.0.0/0 to our IGW
+    * No default route set up for private subnet as we do not want it reaching the internet
+    * Have configured any security settings as of now but will be identifying and tackling as we go
+- Launched an EC2 Ubuntu instance and configured and attached an elastic IP
+    * This allowed me to after some set up to be able to SSH directly into my EC2 instance
+    * I set up a key pair as reccommended
+    * Overall this confirmed we can reach the internet and the internet can reach us for the EC2
+    * I made sure to stop the EC2 instance as well as release our elastic IP to avoid continous costs
